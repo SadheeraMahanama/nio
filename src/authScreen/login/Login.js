@@ -65,7 +65,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
         <Card style= {styles.containerstyle}>
             <CardItem style= {styles.containerstyle1}>
               <TouchableOpacity >
-              <Text  >Discussion 1</Text>
+              <Text  >Discussion.. 1</Text>
               </TouchableOpacity>
               <Right>
                 <Icon name="angle-right" />
