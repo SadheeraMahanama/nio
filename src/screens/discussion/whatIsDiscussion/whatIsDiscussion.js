@@ -4,6 +4,9 @@ import {Text,Platform, StyleSheet,View,Image,ScrollView,TextInput,KeyboardAvoidi
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 import CustomHeader from '../../../components/Header/Header';
 import DiscussedCard from './discussedCard';
+import Icon_Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon_Material from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon_MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 data= [{
     id: 1,
@@ -91,18 +94,27 @@ class WhatIsDiscussion extends Component{
                 <Header style={{ backgroundColor: '#6D0F49' }}
                     androidStatusBarColor={'#6D0F49'}>
                 <Left>
-                    <Button transparent>
-                    <Icon name='profile' />
-                    </Button>
+                    <TouchableOpacity transparent>
+                    {/* <Icon name='md-contact' /> */}
+                    <Icon_Ionicons 
+                      name='md-contact' 
+                      color="white"
+                      size={30}
+                    />
+                    </TouchableOpacity>
                 </Left>
                 <Body>
                     {/* <Title>Header</Title> */}
-                   <Text>What is Discussion</Text>
+                   <Text style={styles.title}>What is Discussion</Text>
                 </Body>
-                <Right> 
-                    <Button transparent>
-                    <Icon name='pencil' />
-                    </Button>
+                <Right>  
+                    <TouchableOpacity transparent>
+                    <Icon_Ionicons 
+                      name='md-contacts' 
+                      color="white"
+                      size={30}
+                    />
+                    </TouchableOpacity>
                 </Right>
                 </Header>
             </View>
@@ -119,11 +131,14 @@ class WhatIsDiscussion extends Component{
             //     </View>
             //   </TouchableOpacity>
 
-            <View style={styles.cardContainer}>
+            <View key={email.id} style={styles.cardContainer}>
             <View style={styles.card}>
             <View style={styles.headerBlock}>
-              <View style={{width:  '25%', height: 75, backgroundColor: 'white',  padding:10,}}>
-                  <Text>Image</Text>
+              <View style={{width:  '20%', height: 75,  padding:10,}}>
+                  <Icon_Ionicons  
+                        name="md-contact"                    
+                        size={70} color="blue"
+                  />
               </View>
                 <View style={styles.discription} >
                   <Text style={styles.header}>{email.description}</Text>
@@ -166,7 +181,10 @@ class WhatIsDiscussion extends Component{
                   </View>
                   <View style={{ width:'15%', height: 75, backgroundColor: '#9F035C',  padding:10,}}>
                     <TouchableOpacity>
-                        <Text>send</Text>
+                        <Icon_Ionicons  
+                          name="md-send"                    
+                          size={40} color="white"
+                        />
                     </TouchableOpacity>
                 </View>
               </View>
@@ -218,7 +236,14 @@ const styles = StyleSheet.create({
         borderColor: 'gray', 
         borderWidth: 1, 
         borderRadius:20,
-        width:'100%'
+        width:'100%',
+        fontFamily: "MyriadProBoldSemiExtended",
+    },
+
+    title:{
+      color:'white',
+      fontSize:19,
+      fontWeight:'600'
     }
     
 })

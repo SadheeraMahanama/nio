@@ -5,7 +5,7 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'nativ
 import DiscussionCard from './discussionCard/discussionCard';
 import SearchBar from './search/search';
 import Icon_Ionicons from 'react-native-vector-icons/Ionicons';
-import Icon_Material from 'react-native-vector-icons/MaterialCommunityIcons'
+import Icon_Material from 'react-native-vector-icons/MaterialCommunityIcons';
 import SearchInput, { createFilter } from 'react-native-search-filter';
 const KEYS_TO_FILTERS = ['user.name', 'subject', 'description'];
 
