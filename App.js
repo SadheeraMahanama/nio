@@ -20,6 +20,7 @@ import loading from './src/screens/tabscreen/loading'
 import Discussion from './src/screens/discussion/discussion';
 import Test from './src/screens/discussion/test';
 import WhatIsDiscussion from './src/screens/discussion/whatIsDiscussion/whatIsDiscussion';
+import Task from './src/screens/task/task';
 
 export default class App extends Component{
   render() {
@@ -33,6 +34,9 @@ const AppStackNavigator = createStackNavigator({
   // Test:{
   //   screen:Test
   // },
+  Task:{
+    screen:Task
+  },
 
   WhatIsDiscussion:{
     screen:WhatIsDiscussion
