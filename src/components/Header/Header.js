@@ -22,8 +22,11 @@ import {
 // import DrawerNavigation from '../../navigations/DrawerNavigation';
 import colors from '../../styles/colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Icon_Ionicons from 'react-native-vector-icons/Ionicons'
- 
+import Icon_Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon_Entypo from 'react-native-vector-icons/Entypo';
+
+// dots-three-vertical
+
 class CustomHeader extends Component{
     constructor(props){
         super(props);
@@ -46,6 +49,17 @@ class CustomHeader extends Component{
                 size={25} color="white"/>
         </Button>
 
+        const leftIcon = type==='third'? 
+        <Icon_Entypo  name="dots-three-vertical"    
+            
+        size={25} color="white"/> :
+        <Icon                            
+            // name="md-notifications"
+            onPress={leftPress}
+            name={iconName}
+            style={{fontSize: 23,  color: '#ffffff'}}  
+        />
+
         return(
             <View> 
                  <Header  style={{ backgroundColor: '#6D0F49' }}
@@ -58,12 +72,12 @@ class CustomHeader extends Component{
                         <Title style ={{textAlign:'center'}} >{title }</Title>
                     </Body>
                     <Right>
-                    <Icon                            
+                    {/* <Icon                            
                                 // name="md-notifications"
                                 onPress={leftPress}
                                 name={iconName}
                                 style={{fontSize: 23,  color: '#ffffff'}}  
-                            />
+                            /> */}
                         
                     </Right>
                 </Header>
