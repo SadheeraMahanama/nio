@@ -19,6 +19,7 @@ import DrawerScreen1 from './src/screens/drawerScreen/DrawerScreen1'
 import loading from './src/screens/tabscreen/loading'
 import Discussion from './src/screens/discussion/discussion';
 import Test from './src/screens/discussion/test';
+import WhatIsDiscussion from './src/screens/discussion/whatIsDiscussion/whatIsDiscussion';
 
 export default class App extends Component{
   render() {
@@ -31,6 +32,10 @@ export default class App extends Component{
 const AppStackNavigator = createStackNavigator({  
   // Test:{
   //   screen:Test
+  // },
+
+  // WhatIsDiscussion:{
+  //   screen:WhatIsDiscussion
   // },
   Discussion:{
     screen: Discussion

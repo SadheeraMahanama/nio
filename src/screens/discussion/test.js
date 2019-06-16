@@ -20,9 +20,9 @@ export default class Test extends Component{
       <View style={styles.container}>
         <SearchInput 
           onChangeText={(term) => { this.searchUpdated(term) }} 
-          style={styles.searchInput}
+          style={styles.searchInput} 
           placeholder="Type a message to search"
-          />
+          /> 
         <ScrollView>
           {filteredEmails.map(email => {
             return (
