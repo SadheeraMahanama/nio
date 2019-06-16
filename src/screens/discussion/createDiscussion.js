@@ -92,7 +92,7 @@ class CreateDiscussion extends Component{
     render(){
         const filteredEmails = data.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
         return(
-            <ScrollView>
+            <ScrollView style={{backgroundColor:'white'}}>
                 <CustomHeader 
                     title="Discussion"
                     alignItems = 'center' 
