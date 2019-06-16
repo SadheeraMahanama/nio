@@ -4,6 +4,8 @@ import CustomHeader from '../../components/Header/Header';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 import DiscussionCard from './discussionCard/discussionCard';
 import SearchBar from './search/search';
+import Icon_Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon_Material from 'react-native-vector-icons/MaterialCommunityIcons'
 import SearchInput, { createFilter } from 'react-native-search-filter';
 const KEYS_TO_FILTERS = ['user.name', 'subject', 'description'];
 
@@ -20,7 +22,8 @@ data= [{
       name: 'Robert'
     },
     subject: 'React is <3',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. .... To take a trivial example, which of us ever undertakes laborious physical exercise  '
+    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. .... To take a trivial example, which of us ever undertakes laborious physical exercise  ',
+    notification: 10
   }, {
     id: 3,
     user: {
@@ -98,28 +101,33 @@ data= [{
                     alignItems = 'center' 
                 />
             </View>
-            <View>
+            <View style={{height:60}}>
                 {/* <SearchBar /> */}
-                <Header style={{ backgroundColor: '#6D0F49' }}
-                    androidStatusBarColor={'#6D0F49'}>
+                <Header style={{ backgroundColor: '#9F035C' , height:70, padding:15 }}
+                    androidStatusBarColor={'#6D0F49'}
+                  >
                 {/* <Left>
                     <Button transparent>
                     <Icon name='arrow-back' />
                     </Button>
                 </Left> */}
-                <Body>
+                <View style={{width:'90%'}}>
                     {/* <Title>Header</Title> */}
                     <SearchInput 
                     onChangeText={(term) => { this.searchUpdated(term) }} 
                     style={styles.searchInput} 
                     placeholder="Type a message to search"
                     />
-                </Body>
-                <Right> 
+                </View>
+                <TouchableOpacity style={{width:'10%'}}> 
                     <Button transparent>
-                    <Icon name='pencil' />
+                    <Icon_Material 
+                      name='pencil' 
+                      color="white"
+                      size={25}
+                    />
                     </Button>
-                </Right>
+                </TouchableOpacity>
                 </Header>
             </View>
             <View>
@@ -139,13 +147,14 @@ data= [{
             //     </View>
             //   </TouchableOpacity>
 
-            <View style={styles.cardContainer}>
+            <TouchableOpacity key={email.id} style={styles.cardContainer}>
               <View style={styles.card}>
               <View style={styles.headerBlock}>
-                <View style={{width:  '25%', height: 75, backgroundColor: 'powderblue',  padding:10,}}>
-                    <Text>Image</Text>
+                <View style={{width:  '25%', height: 75, backgroundColor: '#F5F5F5',  padding:10,}}>
+                    <Icon_Ionicons  name="md-contact"                    
+                        size={45} color="#6D0F49"/>
                 </View>
-                  <View style={{width: '50%', height: 75, backgroundColor: 'powderblue',  padding:10,}} >
+                  <View style={{width: '50%', height: 75, backgroundColor: '#F5F5F5',  padding:10,}} >
                     <Text style={styles.header}>
                          {email.user.name}
                     </Text>
@@ -153,8 +162,9 @@ data= [{
                         Today, 12 AM
                     </Text>
                   </View>
-                  <View style={{ width:'25%', height: 75, backgroundColor: 'powderblue',  padding:10,}}>
-                    <Text>Notification</Text>
+                  <View style={{ width:'25%', height: 75, backgroundColor: '#F5F5F5',  padding:10,}}>
+                  <Text>{email.notification}</Text>
+                    {email.notification ==10 ? <Text>{email.notification}</Text>: <Text></Text>}
                 </View>
               </View>
 
@@ -165,7 +175,7 @@ data= [{
                   </Text>
               </View>
           </View>
-          </View>
+          </TouchableOpacity>
             )
           })}
 
@@ -211,7 +221,9 @@ const styles = StyleSheet.create({
     searchInput:{
       padding: 10,
       borderColor: '#CCC',
-      borderWidth: 1
+      borderWidth: 1,
+      borderRadius:25,
+      width:'100%',
     },
 
     cardContainer:{
@@ -232,7 +244,7 @@ const styles = StyleSheet.create({
 
     textContainer:{
         padding:10,
-        backgroundColor:'#c7ccd6'
+        backgroundColor:'#EEEEEE'
     },
 
     text:{

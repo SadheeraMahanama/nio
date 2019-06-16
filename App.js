@@ -26,7 +26,7 @@ import TaskParticipantList from './src/screens/task/taskParticipantList/taskPart
 import DiscussionParticipantList from './src/screens/discussion/discussionParticipantList';
 import CreateDiscussion from './src/screens/discussion/createDiscussion';
 
-export default class App extends Component{
+export default class App extends Component{ 
   render() {
     return (
       <AppStackNavigator />
@@ -42,8 +42,12 @@ const AppStackNavigator = createStackNavigator({
   //   screen:WhatIsDiscussion
   // },
 
-  CreateDiscussion:{
-    screen:CreateDiscussion
+  // CreateDiscussion:{
+  //   screen:CreateDiscussion
+  // },
+
+  Discussion:{
+    screen: Discussion
   },
  
   DiscussionParticipantList:{
@@ -62,9 +66,7 @@ const AppStackNavigator = createStackNavigator({
     screen:Task
   },
 
-  Discussion:{
-    screen: Discussion
-  },
+  
   Login:{
     screen:Login
   },
