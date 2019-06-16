@@ -31,7 +31,7 @@ export default class App extends Component{
     return (
       <AppStackNavigator />
     );
-  }
+  } 
 }
 
 const AppStackNavigator = createStackNavigator({  
@@ -47,9 +47,9 @@ const AppStackNavigator = createStackNavigator({
   //   screen: Discussion
   // },
 
-  WhatIsDiscussion:{
-    screen:WhatIsDiscussion
-  },
+  // WhatIsDiscussion:{
+  //   screen:WhatIsDiscussion
+  // },
  
   DiscussionParticipantList:{
     screen:DiscussionParticipantList

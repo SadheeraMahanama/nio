@@ -186,11 +186,11 @@ class WhatIsDiscussion extends Component{
                           size={40} color="white"
                         />
                     </TouchableOpacity>
-                </View>
+                </View> 
               </View>
           </View>
         </View>
-        </View> )}
+        </View> )} 
         
 }
 
