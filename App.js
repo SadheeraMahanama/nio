@@ -38,16 +38,17 @@ const AppStackNavigator = createStackNavigator({
   // Test:{
   //   screen:Test
   // },
-  // WhatIsDiscussion:{
-  //   screen:WhatIsDiscussion
-  // },
 
   // CreateDiscussion:{
   //   screen:CreateDiscussion
   // },
 
-  Discussion:{
-    screen: Discussion
+  // Discussion:{
+  //   screen: Discussion
+  // },
+
+  WhatIsDiscussion:{
+    screen:WhatIsDiscussion
   },
  
   DiscussionParticipantList:{
