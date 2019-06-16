@@ -24,6 +24,7 @@ import Task from './src/screens/task/task';
 import WhatIsTask from './src/screens/task/whatIsTask';
 import TaskParticipantList from './src/screens/task/taskParticipantList/taskParticipantList';
 import DiscussionParticipantList from './src/screens/discussion/discussionParticipantList';
+import CreateDiscussion from './src/screens/discussion/createDiscussion';
 
 export default class App extends Component{
   render() {
@@ -37,6 +38,14 @@ const AppStackNavigator = createStackNavigator({
   // Test:{
   //   screen:Test
   // },
+  // WhatIsDiscussion:{
+  //   screen:WhatIsDiscussion
+  // },
+
+  CreateDiscussion:{
+    screen:CreateDiscussion
+  },
+ 
   DiscussionParticipantList:{
     screen:DiscussionParticipantList
   },
@@ -53,9 +62,6 @@ const AppStackNavigator = createStackNavigator({
     screen:Task
   },
 
-  WhatIsDiscussion:{
-    screen:WhatIsDiscussion
-  },
   Discussion:{
     screen: Discussion
   },

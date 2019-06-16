@@ -1,62 +1,50 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
-import SearchInput, { createFilter } from 'react-native-search-filter';
-import emails from './mails';
-const KEYS_TO_FILTERS = ['user.name', 'subject'];
- 
-export default class Test extends Component{
- constructor(props) {
-    super(props);
-    this.state = {
-      searchTerm: ''
-    }
-  }
-  searchUpdated(term) {
-    this.setState({ searchTerm: term })
-  }
-  render() {
-    const filteredEmails = emails.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
-    return (
-      <View style={styles.container}>
-        <SearchInput 
-          onChangeText={(term) => { this.searchUpdated(term) }} 
-          style={styles.searchInput} 
-          placeholder="Type a message to search"
-          /> 
-        <ScrollView>
-          {filteredEmails.map(email => {
-            return (
-              <TouchableOpacity onPress={()=>alert(email.user.name)} key={email.id} style={styles.emailItem}>
-                <View>
-                  <Text>{email.user.name}</Text>
-                  <Text style={styles.emailSubject}>{email.subject}</Text>
-                </View>
-              </TouchableOpacity>
-            )
-          })}
-        </ScrollView>
-      </View>
-    );
-  }
-}
- 
-const styles = StyleSheet.create({
+import React, { Component } from "react";
+ import { Platform, StyleSheet, View, Image, TouchableOpacity, Alert, Text } from "react-native";
+
+ export default class Test extends Component {
+
+   FloatingButtonEvent=()=>{
+       Alert.alert("Floating Button Clicked");
+   }
+
+   render() {
+      return (
+        <View style={styles.container}>
+        <Text style={styles.headerText}> Floating Button Example </Text>
+         <TouchableOpacity activeOpacity={0.5} onPress={this.FloatingButtonEvent} style={styles.TouchableOpacityStyle} >
+           <Image source={require('../task/contact.jpg')}  style={styles.FloatingButtonStyle} />
+         </TouchableOpacity>
+       </View>
+     );
+   }
+ }
+
+
+ const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'flex-start'
+    justifyContent: 'center',
+    backgroundColor: "#e5e5e5"
   },
-  emailItem:{
-    borderBottomWidth: 0.5,
-    borderColor: 'rgba(0,0,0,0.3)',
-    padding: 10
+  headerText: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    fontWeight: 'bold'
   },
-  emailSubject: {
-    color: 'rgba(0,0,0,0.5)'
+  TouchableOpacityStyle: {
+    position: 'absolute',
+    width: 50,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: 30,
+    bottom: 30,
   },
-  searchInput:{
-    padding: 10,
-    borderColor: '#CCC',
-    borderWidth: 1
-  }
+  FloatingButtonStyle: {
+    resizeMode: 'contain',
+    width: 50,
+    height: 50,
+  },
+
 });

@@ -22,6 +22,7 @@ import {
 // import DrawerNavigation from '../../navigations/DrawerNavigation';
 import colors from '../../styles/colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon_Ionicons from 'react-native-vector-icons/Ionicons'
  
 class CustomHeader extends Component{
     constructor(props){
@@ -31,7 +32,7 @@ class CustomHeader extends Component{
      render(){
          const { title, openDrawer, iconName,leftPress, type,iconNameRight } = this.props;
          const rightIcon = type==='sub'? 
-            <Icon  name="bars"    
+            <Icon_Ionicons  name="ios-arrow-back"    
                 
          size={25} color="white"/> :
             <Button
