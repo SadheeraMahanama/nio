@@ -12,7 +12,7 @@ import {
     Card,
     CardItem,
     Body,
-    Content,
+    Content, 
     Header,
     Title,
     Left,
