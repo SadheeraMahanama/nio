@@ -73,7 +73,7 @@ export default class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: ''
+      searchTerm: '' 
     }
   }
   searchUpdated(term) {
@@ -122,7 +122,7 @@ export default class SearchBar extends Component {
         </View>
     );
   }
-}
+} 
 
 // const styles = StyleSheet.create({
   const styles = StyleSheet.create({
