@@ -17,6 +17,8 @@ import ForgotPassword from './src/authScreen/forgotPassword/ForgotPassword';
 import DrawerNavigator from './src/navigation/drawerNavigation/DrawerNavigator';
 import DrawerScreen1 from './src/screens/drawerScreen/DrawerScreen1'
 import loading from './src/screens/tabscreen/loading'
+import Discussion from './src/screens/discussion/discussion';
+import Test from './src/screens/discussion/test';
 
 export default class App extends Component{
   render() {
@@ -27,6 +29,12 @@ export default class App extends Component{
 }
 
 const AppStackNavigator = createStackNavigator({  
+  // Test:{
+  //   screen:Test
+  // },
+  Discussion:{
+    screen: Discussion
+  },
   Login:{
     screen:Login
   },

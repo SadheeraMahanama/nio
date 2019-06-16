@@ -47,8 +47,8 @@ class CustomHeader extends Component{
 
         return(
             <View> 
-                 <Header  style={{ backgroundColor: '#e27a5a' }}
-          androidStatusBarColor={'#e27a5a'}>
+                 <Header  style={{ backgroundColor: '#6D0F49' }}
+                    androidStatusBarColor={'#6D0F49'}>
                     <Left>
                     {rightIcon}
                        

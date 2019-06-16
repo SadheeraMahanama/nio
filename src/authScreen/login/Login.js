@@ -71,7 +71,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
                 <Icon name="angle-right" />
               </Right>
              </CardItem>
-             
+              
              </Card>
                  
          </View>
